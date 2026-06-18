@@ -1,117 +1,62 @@
-Docker Concepts Summary
+# Docker Concepts Summary
 
-¿Qué es Docker?
+## **Idea principal**
 
-Docker permite ejecutar aplicaciones dentro de contenedores aislados y reproducibles.
+Docker permite ejecutar aplicaciones dentro de contenedores aislados, reproducibles y fáciles de compartir.
 
-La idea principal es:
+Modelo mental:
 
+```
 Imagen → Contenedor → Datos → Limpieza
+```
 
-⸻
-
-Imagen
+## **Imagen**
 
 Una imagen es una plantilla inmutable.
 
 Ejemplos:
 
-* alpine
-* ubuntu
-* hello-world
+- alpine
+- ubuntu
+- hello-world
 
-Pensamiento:
-
-Imagen = receta
-
-⸻
-
-Contenedor
+## **Contenedor**
 
 Un contenedor es una imagen ejecutándose.
 
-Comandos principales:
+Tiene:
 
-* docker run
-* docker stop
-* docker start
-* docker restart
-* docker rm
+- proceso principal
+- filesystem temporal
+- aislamiento
 
-Pensamiento:
+## **Writable Layer**
 
-Contenedor = aplicación en ejecución
+La writable layer guarda cambios temporales del contenedor.
 
-⸻
+Si el contenedor se elimina, esta capa desaparece.
 
-Ciclo de vida
+## **Volúmenes**
 
-Estados:
+Los volúmenes permiten persistir datos fuera del contenedor.
 
-* Crear
-* Ejecutar
-* Detener
-* Reiniciar
-* Eliminar
+Idea clave:
 
-⸻
-
-Writable Layer
-
-La capa writable es temporal.
-
-Los cambios pertenecen al contenedor.
-
-Si el contenedor se elimina, los datos desaparecen.
-
-⸻
-
-Volúmenes
-
-Los volúmenes almacenan datos persistentes.
-
-Comandos:
-
-* docker volume create
-* docker volume ls
-
-Idea importante:
-
+```
 Contenedor eliminado ≠ volumen eliminado
+```
 
-⸻
+## **Limpieza**
 
-Limpieza
+Docker acumula contenedores detenidos, imágenes, redes y caché.
 
-Comandos:
+Comandos clave:
 
-* docker system df
-* docker container prune
-* docker image prune
-* docker network prune
-* docker builder prune
-* docker system prune
-
-⸻
-
-Mapa Mental
-
-Imagen
-↓
-Contenedor
-↓
-Writable Layer
-↓
-Volumen
-↓
-Limpieza
-
-⸻
-
-Filosofía
-
-No memorizar comandos.
-
-Comprender:
-
-Imagen → Contenedor → Datos → Mantenimiento
+```
+docker system df
+docker container prune
+docker image prune
+docker network prune
+docker builder prune
+docker system prune
+```

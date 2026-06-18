@@ -9,11 +9,9 @@ docker ps -a
 docker system df
 ```
 
----
+## **Crear y ejecutar contenedores**
 
-## Crear y ejecutar contenedores
-
-```bash
+```
 docker run
 docker exec
 docker start
@@ -22,61 +20,39 @@ docker restart
 docker rm
 ```
 
----
+## **Imágenes**
 
-## Imágenes
-
-```bash
+```
 docker pull
 docker build
 docker image prune
 docker image prune -a
 ```
 
----
+## **Volúmenes**
 
-## Volúmenes
-
-Crear volumen:
-
-```bash
+```
 docker volume create mydata
-```
-
-Listar volúmenes:
-
-```bash
 docker volume ls
-```
-
-Montar volumen:
-
-```bash
 docker run -v mydata:/data
 ```
 
----
+## **Redes**
 
-## Redes
-
-```bash
+```
 docker network ls
 docker network prune
 ```
 
----
+## **Build cache**
 
-## Build cache
-
-```bash
+```
 docker builder prune
 ```
 
----
+## **Limpieza**
 
-## Limpieza
-
-```bash
+```
 docker container prune
 docker image prune
 docker network prune
@@ -85,11 +61,9 @@ docker system prune
 docker system prune --volumes
 ```
 
----
+## **Flujo mental**
 
-## Flujo mental
-
-```text
+```
 Imagen
 ↓
 Contenedor
