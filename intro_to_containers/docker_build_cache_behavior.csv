@@ -1,0 +1,6 @@
+concept,classification
+Unchanged Dockerfile instruction before the modified line,CACHED_LAYER
+Modified Dockerfile instruction,REBUILT_LAYER
+Instruction after a modified instruction,REBUILT_LAYER
+Build context file copied by unchanged COPY instruction,CACHED_LAYER
+New image tag after rebuild,NEW_IMAGE_REFERENCE
